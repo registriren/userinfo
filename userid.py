@@ -3,6 +3,7 @@
 
 
 from botapitamtam import BotHandler
+import json
 
 config = 'config.json'
 with open(config, 'r', encoding='utf-8') as c:
