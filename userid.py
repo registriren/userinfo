@@ -3,6 +3,11 @@
 
 from botapitamtam import BotHandler
 
+config = 'config.json'
+with open(config, 'r', encoding='utf-8') as c:
+    conf = json.load(c)
+    token = conf['access_token']
+
 bot = BotHandler(token)
 
 def main():
