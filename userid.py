@@ -19,7 +19,6 @@ def main():
         if last_update == None: #проверка на пустое событие, если пусто - возврат к началу цикла
             continue
         type_upd = bot.get_update_type(last_update)
-        text = bot.get_text(last_update)
         chat_id = bot.get_chat_id(last_update)
         user_id = bot.get_user_id(last_update)
         
