@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+
 from botapitamtam import BotHandler
 
 config = 'config.json'
