@@ -23,7 +23,7 @@ def main():
         chat_id = bot.get_chat_id(last_update)
         user_id = bot.get_user_id(last_update)
         
-        print('user_id: {}\nchat_id: {}\ntype: {}'.format(user_id, chat_id, type_upd), chat_id)
+        bot.send_message('user_id: {}\nchat_id: {}\ntype: {}'.format(user_id, chat_id, type_upd), chat_id)
         
         
 if __name__ == '__main__':
