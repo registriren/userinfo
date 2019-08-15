@@ -24,11 +24,12 @@ def main():
         name = bot.get_name(last_update)
         link_userid = bot.get_link_user_id(last_update)
         link_name = bot.get_link_name(last_update)
+        link_chatid = bot.get_link_chat_id(last_update)
 
-        if link_userid == None:
+        if link_chatid == None:
             bot.send_message('name: {}\nuser_id: {}\nchat_id: {}\ntype: {}\n'.format(name, user_id, chat_id, type_upd, link_userid), chat_id)
         else:
-            bot.send_message('forward name: {}\nforward user_id: {}\nchat_id: {}\ntype: {}\n'.format(link_name, link_userid, chat_id, type_upd), chat_id)
+            bot.send_message('forward name: {}\nforward user_id: {}\nchat_id: {}\ntype: {}\n'.format(link_name, link_userid, link_chatid, type_upd), chat_id)
         bot.send_message('полная структура ответа GetUpdates:\n{}'.format(str(last_update)), chat_id)
         
 if __name__ == '__main__':
