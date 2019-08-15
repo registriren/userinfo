@@ -22,9 +22,9 @@ def main():
         chat_id = bot.get_chat_id(last_update)
         user_id = bot.get_user_id(last_update)
         name = bot.get_name(last_update)
-        #memb = bot.get_members(chat_id)
+        link_userid = bot.get_link_user_id(chat_id)
 
-        bot.send_message('name: {}\nuser_id: {}\nchat_id: {}\ntype: {}\n'.format(name, user_id, chat_id, type_upd), chat_id)
+        bot.send_message('name: {}\nuser_id: {}\nchat_id: {}\ntype: {}\nforward user_id: {}'.format(name, user_id, chat_id, type_upd, link_userid), chat_id)
         #bot.send_message(str(memb), chat_id)
         bot.send_message('полная структура ответа GetUpdates:\n{}'.format(str(last_update)), chat_id)
         
