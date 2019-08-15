@@ -18,7 +18,7 @@ def main():
         last_update = bot.get_updates()
         if last_update == None: #проверка на пустое событие, если пусто - возврат к началу цикла
             continue
-        type_upd = bot.get_update_type(last_update)
+        #type_upd = bot.get_update_type(last_update)
         chat_id = bot.get_chat_id(last_update)
         user_id = bot.get_user_id(last_update)
         name = bot.get_name(last_update)
@@ -27,9 +27,9 @@ def main():
         link_chatid = bot.get_link_chat_id(last_update)
 
         if link_chatid == None:
-            bot.send_message('name: {}\nuser_id: {}\nchat_id: {}\ntype: {}\n'.format(name, user_id, chat_id, type_upd, link_userid), chat_id)
+            bot.send_message('name: {}\nuser_id: {}\nchat_id: {}\n'.format(name, user_id, chat_id), chat_id)
         else:
-            bot.send_message('forward name: {}\nforward user_id: {}\nchat_id: {}\ntype: {}\n'.format(link_name, link_userid, link_chatid, type_upd), chat_id)
+            bot.send_message('forward name: {}\nforward user_id: {}\nchat_id: {}\n'.format(link_name, link_userid, link_chatid), chat_id)
         bot.send_message('полная структура ответа GetUpdates:\n{}'.format(str(last_update)), chat_id)
         
 if __name__ == '__main__':
