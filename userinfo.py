@@ -13,12 +13,12 @@ with open(config, 'r', encoding='utf-8') as c:
 bot = BotHandler(token)
 
 def main():
-
+    marker = None
     while True:
-        last_update = bot.get_updates()
+        last_update = bot.get_updates(marker)
         if last_update == None: #проверка на пустое событие, если пусто - возврат к началу цикла
             continue
-        #type_upd = bot.get_update_type(last_update)
+        marker = bot.get_marker(last_update)
         chat_id = bot.get_chat_id(last_update)
         user_id = bot.get_user_id(last_update)
         name = bot.get_name(last_update)
@@ -34,6 +34,7 @@ def main():
             bot.send_message('name: {}\nuser_id: {}\nchat_id: {}\n'.format(name, user_id, chat_id), chat_id)
         bot.send_message('полная структура ответа GetUpdates:\n{}'.format(str(last_update)), chat_id)
         
+                
 if __name__ == '__main__':
     try:
         main()
