@@ -33,7 +33,7 @@ def main():
         else:    
             bot.send_message('name: {}\nuser_id: {}\nchat_id: {}\n'.format(name, user_id, chat_id), chat_id)
         update = json.dumps(last_update, ensure_ascii=False, indent=4)
-        bot.send_message(last_update, chat_id)
+        bot.send_message(str(last_update), chat_id)
         bot.send_message('полная структура ответа GetUpdates:\n{}'.format(str(update)), chat_id)
         
                 
