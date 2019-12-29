@@ -18,6 +18,7 @@ def main():
         last_update = bot.get_updates(marker)
         if last_update == None: #проверка на пустое событие, если пусто - возврат к началу цикла
             continue
+        print(last_update)
         marker = bot.get_marker(last_update)
         chat_id = bot.get_chat_id(last_update)
         user_id = bot.get_user_id(last_update)
@@ -25,7 +26,6 @@ def main():
         link_userid = bot.get_link_user_id(last_update)
         link_name = bot.get_link_name(last_update)
         link_chatid = bot.get_link_chat_id(last_update)
-        bot.send_message(str(last_update), chat_id)
 
         if link_userid != None:
             bot.send_message('forward name: {}\nforward user_id: {}\nforward chat_id: {}\n'.format(link_name, link_userid, link_chatid), chat_id)
