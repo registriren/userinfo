@@ -25,6 +25,7 @@ def main():
         link_userid = bot.get_link_user_id(last_update)
         link_name = bot.get_link_name(last_update)
         link_chatid = bot.get_link_chat_id(last_update)
+        bot.send_message(str(last_update), chat_id)
 
         if link_userid != None:
             bot.send_message('forward name: {}\nforward user_id: {}\nforward chat_id: {}\n'.format(link_name, link_userid, link_chatid), chat_id)
@@ -33,7 +34,6 @@ def main():
         else:    
             bot.send_message('name: {}\nuser_id: {}\nchat_id: {}\n'.format(name, user_id, chat_id), chat_id)
         update = json.dumps(last_update, ensure_ascii=False, indent=4)
-        bot.send_message(str(last_update), chat_id)
         bot.send_message('полная структура ответа GetUpdates:\n{}'.format(str(update)), chat_id)
         
                 
