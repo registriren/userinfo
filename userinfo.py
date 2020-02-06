@@ -14,7 +14,7 @@ bot = BotHandler(token)
 
 def main():
     while True:
-        last_update = bot.get_updates(marker)
+        last_update = bot.get_updates()
         if last_update: #проверка на пустое событие, если пусто - возврат к началу цикла
             chat_id = bot.get_chat_id(last_update)
             user_id = bot.get_user_id(last_update)
